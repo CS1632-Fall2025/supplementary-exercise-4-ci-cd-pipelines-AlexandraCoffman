@@ -32,6 +32,8 @@ public class CatUnitTest {
 		// Passing InstanceType.MOCK as the first parameter will create a mock cat using Mockito.
 		// Which type is the correct choice for this unit test?  I'll leave it up to you.  The answer is in the Unit Testing Part 2 lecture. :)
 		// TODO: Fill in
+		
+		c = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
 	}
 
 	@After
@@ -52,7 +54,12 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetId() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+		//Execution steps
+		int test = c.getId();
+		//Postconditions
+		assertEquals(1, test);
 	}
 
 	/**
@@ -66,7 +73,12 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetName() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
+		//Execution steps
+		String nameTest = c.getName();
+		//Postconditions
+		assertEquals("Jennyanydots", nameTest);
 	}
 
 	/**
@@ -80,7 +92,12 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetRented() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1,"Jennyanydots");
+		//Execution steps
+		boolean rentedTest = c.getRented();
+		//Postconditions
+		assertEquals(false, rentedTest);
 	}
 
 	/**
@@ -94,7 +111,12 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testToString() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1,"Jennyanydots");
+		// Execution steps
+		String stringTest = c.toString();
+		// Postconditions
+		assertEquals("ID 1. Jennyanydots", stringTest);
 	}
 
 	/**
@@ -109,7 +131,13 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testRentCat() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1,"Jennyanydots");
+		// Execution steps
+		c.rentCat();
+		boolean rentedTest = c.getRented();
+		// Postconditions
+		assertEquals(true, rentedTest);
 	}
 
 	/**
@@ -125,7 +153,14 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testReturnCat() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1,"Jennyanydots");
+		c.rentCat();
+		// Execution steps
+		c.returnCat();
+		boolean rentedTest = c.getRented();
+		// Postconditions
+		assertEquals(false, rentedTest);
 	}
 
 	/**
@@ -140,7 +175,16 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testRenameCat() {
-		// TODO: Fill in
+		// Preconditions
+		c = Cat.createInstance(InstanceType.IMPL, 1,"Jennyanydots");
+		// Execution steps
+		String newName = "Garfield";
+		c.renameCat(newName);
+		String nameTest = c.getName();
+		String stringTest = c.toString();
+		// Postconditions
+		assertEquals("Garfield", nameTest);
+		assertEquals("ID 1. Garfield", stringTest);
 	}
 
 }
