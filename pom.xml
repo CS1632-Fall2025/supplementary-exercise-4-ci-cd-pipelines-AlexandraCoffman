@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.wonsunahn</groupId>
-  <artifactId>cs1632-cicd-pipelines</artifactId>
+  <artifactId>cs1632-cicd-pipelines-anc374</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
@@ -34,7 +34,6 @@
     <developerConnection>scm:git:ssh://github.com:wonsunahn/CS1632_CICD_JUnit.git</developerConnection>
     <url>http://github.com/wonsunahn/CS1632_CICD_JUnit/tree/master</url>
   </scm>
-  <artifactId>cs1632-cicd-pipelines-anc374</artifactId>
   <distributionManagement>
     <repository>
       <id>github</id>
